@@ -10,14 +10,26 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
+    EnemyHealth health;
+    CapsuleCollider capsuleCollider;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
     void Update()
     {
+        if (health.IsDead())
+        {
+            enabled = false;
+            navMeshAgent.enabled = false;
+            capsuleCollider.enabled = false;
+            return;
+        }
+
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
             EngageTarget();

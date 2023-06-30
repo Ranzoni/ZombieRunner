@@ -11,19 +11,24 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera fpsCamera;
     [SerializeField] FirstPersonController fpsController;
 
-    bool isZoomOut;
+    bool isZoomIn;
+
+    void OnDisable()
+    {
+        SetZoomOut();
+    }
 
     void Update()
     {
+        if (!Input.GetMouseButtonDown(1))
+            return;
+
         SetZoom();
     }
 
     void SetZoom()
     {
-        if (!Input.GetMouseButtonDown(1))
-            return;
-
-        if (isZoomOut)
+        if (isZoomIn)
             SetZoomOut();
         else
             SetZoomIn();
@@ -33,13 +38,13 @@ public class WeaponZoom : MonoBehaviour
     {
         fpsCamera.m_Lens.FieldOfView = zoomedOut;
         fpsController.RotationSpeed = zoomedOutSensitivy;
-        isZoomOut = false;
+        isZoomIn = false;
     }
 
     void SetZoomIn()
     {
         fpsCamera.m_Lens.FieldOfView = zoomedIn;
         fpsController.RotationSpeed = zoomedInSensitivy;
-        isZoomOut = true;
+        isZoomIn = true;
     }
 }

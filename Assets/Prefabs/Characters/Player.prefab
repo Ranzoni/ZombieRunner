@@ -170,7 +170,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5393215578589016642}
   m_Material: {fileID: 13400000, guid: 2739020c21b24554d894371dcc392035, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 5935782852028652308}
   - component: {fileID: 4237254459345514210}
   - component: {fileID: 8903877041153805054}
+  - component: {fileID: 3667527993288426342}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -227,13 +228,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 2.3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.25
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.93, z: 0}
+  m_Center: {x: 0.05, y: 1.131, z: 0.492}
 --- !u!114 &8616685848737228371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +443,20 @@ MonoBehaviour:
     ammoAmount: 20
   - ammoType: 2
     ammoAmount: 8
+--- !u!136 &3667527993288426342
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Material: {fileID: 13400000, guid: 2739020c21b24554d894371dcc392035, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.58
+  m_Height: 2.3
+  m_Direction: 1
+  m_Center: {x: 0.05, y: 1.131, z: 0.492}
 --- !u!1001 &882451874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -499,11 +514,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
---- !u!4 &8762286024229794008 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
-  m_PrefabInstance: {fileID: 882451874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8762286024229794009 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
@@ -515,6 +525,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &8762286024229794008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+  m_PrefabInstance: {fileID: 882451874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1741367292
 PrefabInstance:
   m_ObjectHideFlags: 0
