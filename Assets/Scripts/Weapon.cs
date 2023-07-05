@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -11,6 +13,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 1f;
+    [SerializeField] TextMeshProUGUI ammoText;
 
     bool canShoot = true;
 
@@ -21,8 +24,15 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        DisplayAmmo();
+
         if (Input.GetMouseButtonDown(0) && canShoot)
             StartCoroutine(Shoot());
+    }
+
+    void DisplayAmmo()
+    {
+        ammoText.text = ammoSlot.GetCurrentAmmo(ammoType).ToString();
     }
 
     IEnumerator Shoot()
@@ -33,6 +43,7 @@ public class Weapon : MonoBehaviour
             PlayMuzzleFlash();
             ProcessRaycast();
             ammoSlot.ReduceCurrentAmmo(ammoType);
+            GetComponent<AudioSource>().Play();
         }
         
         yield return new WaitForSeconds(timeBetweenShots);

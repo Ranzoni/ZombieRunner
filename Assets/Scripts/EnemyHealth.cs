@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
+    [SerializeField] GameObject screamSFX;
 
     bool isDead;
 
@@ -27,5 +28,6 @@ public class EnemyHealth : MonoBehaviour
     {
         isDead = true;
         GetComponent<Animator>().SetTrigger("die");
+        Instantiate(screamSFX, transform.position, Quaternion.identity);
     }
 }

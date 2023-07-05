@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     {
         hitPoints -= damage;
         
+        var displayDamage = FindObjectOfType<DisplayDamage>();
+        displayDamage.Display();
+        
         if (hitPoints <= 0)
             GetComponent<DeathHandler>().HandleDeath();
     }

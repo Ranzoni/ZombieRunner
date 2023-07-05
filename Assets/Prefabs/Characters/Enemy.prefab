@@ -127,9 +127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2755a02bd33ce5a499e2b7ca611181af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   changeRange: 5
   turnSpeed: 5
+  listGrowlSFX:
+  - {fileID: 8252250007104241138, guid: 2b9a285b041648249a4ee7c46d072905, type: 3}
+  - {fileID: 8252250007104241138, guid: 29289cc885633e94daee2e03e233fced, type: 3}
+  - {fileID: 8252250007104241138, guid: 8b8bf28557b8ba249846f428043557b2, type: 3}
+  attackSFX: {fileID: 8252250007104241138, guid: 1be032914d27f5e429dec26925b33bbb, type: 3}
 --- !u!114 &2579053006969537803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100
+  screamSFX: {fileID: 8252250007104241138, guid: 4053edc18f2bdc840a7302935c39ce94, type: 3}
 --- !u!95 &7748242474756174733
 Animator:
   serializedVersion: 5

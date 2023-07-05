@@ -16,5 +16,6 @@ public class EnemyAttack : MonoBehaviour
             return;
 
         target.TakeDamage(damage);
+        FindObjectOfType<PlayerHurt>().PlaySoundEffect();
     }
 }
